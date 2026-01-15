@@ -49,5 +49,5 @@ Contains Redis CLI commands for practicing Redis features.
 ## 👩‍💻 Author
 
 Shivani Padhariya  
-BCA Student | Aspiring AI / Backend Engineer  
-GitHub Portfolio Project
+
+
