@@ -1,0 +1,97 @@
+#############################################
+ Redis Complete Practice File
+ Author: Shivani Padhariya
+ Purpose: Hands-on practice for Redis fundamentals
+#############################################
+
+# Start redis-cli before running commands
+
+-------------------------------
+1. Basic Key-Value Operations
+-------------------------------
+
+SET user:name "Amit Sharma"
+SET user:email "amit@gmail.com"
+GET user:name
+GET user:email
+
+SET visit_count 1
+INCR visit_count
+GET visit_count
+
+-------------------------------
+2. Expiry (TTL)
+-------------------------------
+
+SET otp "123456"
+EXPIRE otp 60
+TTL otp
+
+-------------------------------
+3. Strings
+-------------------------------
+
+SET product "Laptop"
+APPEND product " Dell"
+GET product
+
+STRLEN product
+
+-------------------------------
+4. Hashes (Like object storage)
+-------------------------------
+
+HSET employee:1 name "Rahul" department "IT" salary 60000
+HGET employee:1 name
+HGETALL employee:1
+
+-------------------------------
+5. Lists (Queue behavior)
+-------------------------------
+
+LPUSH tasks "task1"
+LPUSH tasks "task2"
+RPUSH tasks "task3"
+LRANGE tasks 0 -1
+LPOP tasks
+LRANGE tasks 0 -1
+
+-------------------------------
+6. Sets (Unique values)
+-------------------------------
+
+SADD skills "Java" "Python" "MongoDB"
+SADD skills "Python"
+SMEMBERS skills
+
+-------------------------------
+7. Sorted Sets (Ranking)
+-------------------------------
+
+ZADD leaderboard 100 "Amit"
+ZADD leaderboard 150 "Neha"
+ZADD leaderboard 120 "Rahul"
+ZRANGE leaderboard 0 -1 WITHSCORES
+
+-------------------------------
+8. Pub / Sub (Messaging)
+-------------------------------
+
+# Terminal 1
+SUBSCRIBE news
+
+# Terminal 2
+PUBLISH news "Redis is fast!"
+
+-------------------------------
+9. Delete Keys
+-------------------------------
+
+DEL user:name
+DEL visit_count
+
+-------------------------------
+10. Flush Database (Practice Only)
+-------------------------------
+
+# FLUSHALL
